@@ -41,6 +41,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeRequests()
+                .antMatchers("/unsecured").permitAll()
                 .anyRequest().authenticated();
     }
 
